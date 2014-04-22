@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="Next">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -27,7 +27,7 @@
      <string>Start</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="Tugas">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -37,7 +37,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="Pegawai">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -85,8 +85,10 @@
    </property>
    <widget class="QMenu" name="menuInitialize">
     <property name="title">
-     <string>Initialize</string>
+     <string>&amp;Help</string>
     </property>
+    <addaction name="action_About"/>
+    <addaction name="action_Credits"/>
    </widget>
    <addaction name="menuInitialize"/>
   </widget>
@@ -99,6 +101,16 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_About">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="action_Credits">
+   <property name="text">
+    <string>&amp;Credits</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

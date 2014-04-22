@@ -2,6 +2,7 @@
 #define PROBLEMWINDOW_H
 
 #include <QMainWindow>
+#include "windowshandling.h"
 
 namespace Ui {
 class ProblemWindow;
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::ProblemWindow *ui;
+    WindowsHandling *handler;
 };
 
 #endif // PROBLEMWINDOW_H
