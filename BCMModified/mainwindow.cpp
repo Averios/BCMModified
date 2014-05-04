@@ -6,10 +6,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    if(!handler){
-        handler = new WindowsHandling();
-    }
+    handler = new WindowsHandling();
     connect(ui->action_About,SIGNAL(triggered()),handler,SLOT(About()));
+    connect(ui->action_Credits,SIGNAL(triggered()),handler,SLOT(Credits()));
 }
 
 MainWindow::~MainWindow()
@@ -19,11 +18,23 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Next_clicked()
 {
-    if(!problem){
-        problem = new ProblemWindow();
-    }
+    int *Pegawai = new int;
+    int *Tugas = new int;
+    QString *xPegawai = new QString;
+    QString *xTugas = new QString;
+    *xPegawai = ui->Pegawai->text();
+    *xTugas = ui->Tugas->text();
+    *Pegawai = xPegawai->toInt();
+    *Tugas = xTugas->toInt();
+    problem = new ProblemWindow();
     problem->show();
+    problem->setTable(*Pegawai,*Tugas);
+    problem->raise();
     problem->activateWindow();
-    this->close();
-    delete this;
+    delete Pegawai;
+    delete Tugas;
+    delete xPegawai;
+    delete xTugas;
+//    this->close();
+//    delete this;
 }

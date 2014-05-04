@@ -4,14 +4,18 @@
 #include <QMainWindow>
 #include <QObject>
 #include "aboutDialog.h"
+#include "creditsdialog.h"
+
 class WindowsHandling : public QObject
 {
     Q_OBJECT
 public:
     AboutDialog *OpenAbout;
+    CreditsDialog *OpenCredits;
     WindowsHandling(QObject* parent = 0);
 public slots:
     void About();
+    void Credits();
 };
 
 #endif // WINDOWSHANDLING_H
