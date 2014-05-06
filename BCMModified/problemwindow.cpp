@@ -25,10 +25,21 @@ void ProblemWindow::on_pushButton_clicked()
     }
     solved = true;
     ResultDialog *result = new ResultDialog();
+    QTableWidget *tabel = ui->tableWidget;
     /*
         Parse the result
     */
+    int column = tabel->columnCount();
+    int row = tabel->rowCount();
+    int **problem = new int[row][column];
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < column; j++){
+            problem[i][j] = 0;
+        }
+    }
 
+    //
+    result->MakeTable(row,column);
     result->show();
     result->raise();
     result->activateWindow();

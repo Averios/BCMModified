@@ -2,6 +2,8 @@
 #define RESULTDIALOG_H
 
 #include <QDialog>
+#include <QTableWidget>
+#include"WidgetList.h"
 
 namespace Ui {
 class ResultDialog;
@@ -14,6 +16,7 @@ class ResultDialog : public QDialog
 public:
     explicit ResultDialog(QWidget *parent = 0);
     ~ResultDialog();
+    void MakeTable(int x,int y);
 private:
     Ui::ResultDialog *ui;
     int **values;
