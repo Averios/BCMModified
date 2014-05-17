@@ -4,7 +4,9 @@
 #include <QDialog>
 #include <QTableWidget>
 #include"WidgetList.h"
-
+#include"TableContainer.h"
+#include<vector>
+using namespace std;
 namespace Ui {
 class ResultDialog;
 }
@@ -16,7 +18,8 @@ class ResultDialog : public QDialog
 public:
     explicit ResultDialog(QWidget *parent = 0);
     ~ResultDialog();
-    void MakeTable(int x,int y);
+
+    void MakeTable(int x,int y, double *problem);
 private:
     Ui::ResultDialog *ui;
     int **values;

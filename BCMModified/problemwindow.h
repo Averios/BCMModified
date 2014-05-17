@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "windowshandling.h"
 #include "resultdialog.h"
+#include "TableContainer.h"
 
 namespace Ui {
 class ProblemWindow;
@@ -25,6 +26,10 @@ private:
     Ui::ProblemWindow *ui;
     WindowsHandling *handler;
     bool solved;
+    bool maximizing;
+    vector < MyPair > *PointingX;
+    vector < MyPair > *PointingY;
+    void SolveProblem(int row, int column);
 };
 
 #endif // PROBLEMWINDOW_H
