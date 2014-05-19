@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QObject>
-#include "aboutDialog.h"
+#include "aboutdialog.h"
 #include "creditsdialog.h"
 
 class WindowsHandling : public QObject

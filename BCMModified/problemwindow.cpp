@@ -84,6 +84,15 @@ void ProblemWindow::SolveProblem(int row, int column){
     double optimum;
     int counter;
     int countings;
+    //Count the amount of best candidate for every row and column
+    int *rowCount = new int[row];
+    int *columnCount = new int[column];
+    for(int i = 0; i < row; i++){
+        rowCount[i] = 0;
+    }
+    for(int i = 0; i < column; i++){
+        columnCount[i] = 0;
+    }
 
     //Selecting candidate from every row
     for(int i = 0; i < row; i++){
@@ -128,6 +137,11 @@ void ProblemWindow::SolveProblem(int row, int column){
             countings = j*minus + (column - 1)*opt;
             if(PointingX[i][countings].second->active == 1){
                 if(PointingX[i][countings].first == optimum){
+
+                    //Update the record of row and column
+                    rowCount[PointingX[i][countings].second->y]++;
+                    columnCount[PointingX[i][countings].second->x]++;
+
                     PointingX[i][countings].second->active++;
                 }
                 else{
