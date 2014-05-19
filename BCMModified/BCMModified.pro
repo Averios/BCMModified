@@ -16,13 +16,24 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     problemwindow.cpp \
     windowshandling.cpp \
-    aboutdialog.cpp
+    aboutdialog.cpp \
+    resultdialog.cpp \
+    creditsdialog.cpp \
+    WidgetList.cpp
 
 HEADERS  += mainwindow.h \
     problemwindow.h \
     windowshandling.h \
-    aboutdialog.h
+    aboutdialog.h \
+    resultdialog.h \
+    creditsdialog.h \
+    WidgetList.h \
+    TableContainer.h
 
 FORMS    += mainwindow.ui \
     problemwindow.ui \
-    aboutdialog.ui
+    aboutdialog.ui \
+    resultdialog.ui \
+    creditsdialog.ui
+
+OTHER_FILES +=
