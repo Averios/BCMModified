@@ -64,7 +64,7 @@ void ProblemWindow::on_pushButton_clicked()
     }
     SolveProblem(row,column);
 
-    result->MakeTable(column,row,problem);
+//    result->MakeTable(column,row,problem);
     result->show();
     result->raise();
     result->activateWindow();
@@ -108,7 +108,7 @@ void ProblemWindow::SolveProblem(int row, int column){
         }
 
     }
-
+    //electing candidate from every column
     int stop;
     for(int i = 0; i < column; i++){
         sort(PointingX[i].begin(),PointingX[i].end(), sorter);
