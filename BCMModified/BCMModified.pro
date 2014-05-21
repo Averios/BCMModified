@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     aboutdialog.cpp \
     resultdialog.cpp \
     creditsdialog.cpp \
-    WidgetList.cpp
+    WidgetList.cpp \
+    Leftover.cpp
 
 HEADERS  += mainwindow.h \
     problemwindow.h \

@@ -29,7 +29,10 @@ private:
     bool maximizing;
     vector < MyPair > *PointingX;
     vector < MyPair > *PointingY;
-    void SolveProblem(int row, int column);
+    vector < MyPair > *RealY;
+    vector < MyPair > *RealX;
+    int row, column;
+    void SolveProblem();
 };
 
 #endif // PROBLEMWINDOW_H

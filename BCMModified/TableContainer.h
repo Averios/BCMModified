@@ -14,4 +14,8 @@ static bool sorter(const MyPair &i, const MyPair &j){
     return i.first < j.first;
 }
 
+static bool backsort(const MyPair &i, const MyPair &j){
+    return i.first > j.first;
+}
+
 #endif // TABLECONTAINER_H
