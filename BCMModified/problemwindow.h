@@ -3,9 +3,12 @@
 
 #include <QMainWindow>
 #include "windowshandling.h"
-#include "resultdialog.h"
+#include "justresult.h"
 #include "TableContainer.h"
+#include "answerwindow.h"
+#include <vector>
 
+using namespace std;
 namespace Ui {
 class ProblemWindow;
 }
@@ -25,14 +28,21 @@ private slots:
 private:
     Ui::ProblemWindow *ui;
     WindowsHandling *handler;
+    JustResult *result;
+    AnswerWindow *answer;
     bool solved;
     bool maximizing;
     vector < MyPair > *PointingX;
     vector < MyPair > *PointingY;
     vector < MyPair > *RealY;
-    vector < MyPair > *RealX;
-    int row, column;
+    vector < MyPair > *BestCase;
+    vector < int > ListX, ListY;
+    vector < int >::iterator FoundX, FoundY;
+    int row, column, point1;
+    double **valueContainer;
+    int **sign;
     void SolveProblem();
+    void ComboCreator(int now);
 };
 
 #endif // PROBLEMWINDOW_H

@@ -1,32 +1,31 @@
-#include "resultdialog.h"
-#include "ui_resultdialog.h"
+#include "justresult.h"
+#include "ui_justresult.h"
 
-ResultDialog::ResultDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::ResultDialog)
+JustResult::JustResult(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::JustResult)
 {
-
     ui->setupUi(this);
     stepsCount = 0;
     theStack = ui->stackedWidget;
     theList = ui->listWidget;
 }
 
-ResultDialog::~ResultDialog()
+JustResult::~JustResult()
 {
     delete ui;
 }
 
-void ResultDialog::setTableSize(int row, int column){
+void JustResult::setTableSize(int row, int column){
     this->row = row;
     this->column = column;
 }
 
-void ResultDialog::addBaseTable(double **table){
+void JustResult::addBaseTable(double **table){
     this->values = table;
 }
 
-void ResultDialog::addResult(int **signs){
+void JustResult::addResult(int **signs){
     theTable = new QTableWidget;
     theTable->setRowCount(row);
     theTable->setColumnCount(column);
@@ -44,18 +43,25 @@ void ResultDialog::addResult(int **signs){
             case 1:
                 theItem->setBackgroundColor(Qt::red);
                 break;
+            case 2:
+                theItem->setBackgroundColor(Qt::green);
+                break;
+            case 3:
+                theItem->setBackgroundColor(Qt::yellow);
+                break;
             default:
                 theItem->setBackgroundColor(Qt::white);
                 break;
             }
-            theTable->item(i, j)->setText(Converter);
+            theTable->setItem(i, j, theItem);
         }
     }
     theTable->show();
+    theTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
     theStack->addWidget(theTable);
 }
 
-void ResultDialog::on_listWidget_currentRowChanged(int currentRow)
+void JustResult::on_listWidget_currentRowChanged(int currentRow)
 {
     theStack->setCurrentIndex(currentRow + 2);
 }

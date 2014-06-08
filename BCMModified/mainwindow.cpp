@@ -27,6 +27,7 @@ void MainWindow::on_Next_clicked()
     *Pegawai = xPegawai->toInt();
     *Tugas = xTugas->toInt();
     problem = new ProblemWindow();
+    problem->setWindowTitle("Problem Matrix");
     problem->show();
     problem->setTable(*Pegawai,*Tugas);
     problem->raise();

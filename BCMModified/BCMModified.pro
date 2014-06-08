@@ -20,7 +20,9 @@ SOURCES += main.cpp\
     resultdialog.cpp \
     creditsdialog.cpp \
     WidgetList.cpp \
-    Leftover.cpp
+    Leftover.cpp \
+    justresult.cpp \
+    answerwindow.cpp
 
 HEADERS  += mainwindow.h \
     problemwindow.h \
@@ -29,12 +31,17 @@ HEADERS  += mainwindow.h \
     resultdialog.h \
     creditsdialog.h \
     WidgetList.h \
-    TableContainer.h
+    TableContainer.h \
+    justresult.h \
+    answerwindow.h \
+    AnswerHandler.h
 
 FORMS    += mainwindow.ui \
     problemwindow.ui \
     aboutdialog.ui \
     resultdialog.ui \
-    creditsdialog.ui
+    creditsdialog.ui \
+    justresult.ui \
+    answerwindow.ui
 
 OTHER_FILES +=
